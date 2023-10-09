@@ -15,7 +15,7 @@ namespace AstroMath
             double SpeedOfLight = 299792458;
             double ChangeInWavelength = ObsWavelength - RestWavelength;
             double Velocity = SpeedOfLight * (ChangeInWavelength / RestWavelength);
-            return Velocity;
+            return Math.Round(Velocity, 2);
         }
 
         public static double StarDistance(double Parallax)
@@ -25,7 +25,7 @@ namespace AstroMath
                 throw new ArgumentException("Parallax cannot be zero.");
             }
 
-            return 1 / Parallax;
+            return Math.Round((1 / Parallax), 2);
         }
 
 
@@ -36,7 +36,7 @@ namespace AstroMath
                 throw new ArgumentException("Temperature cannot be lower than -273°c");
             }
 
-            return (Celcius + 273);
+            return Math.Round((Celcius + 273), 2);
         }
 
         public static double EventHorizon (double BlackholeMass)
